@@ -40,7 +40,7 @@ include'connection.php';
                                 <td><?php echo $row['id'] ?></td>
                                 <td><?php echo $row['session'] ?></td>
                                 <td>
-                                    <a class="btn btn-info" href="edit_students.php?id=<?php echo $row['id'] ?>">Edit</a>
+                                    <a class="btn btn-info" href="session/edit_session.php?id=<?php echo $row['id'] ?>">Edit</a>
                                     <a class="btn btn-danger" data-toggle="modal" data-target="#myModal<?php echo $row['id'] ?>" ">Delete</a>
                                     <div class="modal fade" id="myModal<?php echo $row['id'] ?>"  >
                                         <div class="modal-dialog">
@@ -54,12 +54,12 @@ include'connection.php';
 
                                                 <!-- Modal body -->
                                                 <div class="modal-body">
-                                                    Are you sure you want to delele <b><?php echo $row['Name']?></b>
+                                                    Are you sure you want to delele <b><?php echo $row['session']?></b>
                                                 </div>
 
                                                 <!-- Modal footer -->
                                                 <div class="modal-footer">
-                                                    <a class="btn btn-success" href="delete_students.php?id=<?php echo $row['id'] ?>">Yes</a>
+                                                    <a class="btn btn-success" href="session/delete_session.php?id=<?php echo $row['id'] ?>">Yes</a>
                                                     <button type="button" class="btn btn-danger" data-dismiss="modal">No</button>
                                                 </div>
 
