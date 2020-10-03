@@ -1,0 +1,33 @@
+CREATE TABLE session(
+    id int NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    session varchar(255)
+);
+
+CREATE TABLE section(
+    id int NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    section varchar(255)
+);
+
+CREATE TABLE subject(
+    id int NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    sub_name varchar(255),
+    sub_code varchar(255)
+);
+
+CREATE TABLE student(
+    id int,roll int NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    password varchar(255)
+);
+CREATE TABLE admin(
+    id int NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    name varchar(255),
+    email varchar(255),
+    password varchar(255),
+    role varchar(255)
+);
+INSERT INTO admin(name,email,password,role)
+VALUES ('Pratick','pratick.ps@gmail.com','12345','admin' );
+
+
+INSERT INTO users(lastname, firstname, description, age, department_id)
+VALUES ('Sen', 'Anik', 'value3', 30, 2);
