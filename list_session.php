@@ -27,9 +27,7 @@ include'connection.php';
                         <th>ID</th>
                         <th>Sessions</th>
                         <th >Actions</th>
-
                         </thead>
-
                         <tbody align="center">
                         <?php
                         $str= "select * from session";
@@ -71,7 +69,6 @@ include'connection.php';
                             </tr>
                         <?php }
                         ?>
-
                         </tbody>
                     </table>
                 </div>
