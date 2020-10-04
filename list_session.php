@@ -26,6 +26,7 @@ include'connection.php';
                         <thead class="thead-dark" align="center">
                         <th>ID</th>
                         <th>Sessions</th>
+                        <th>Status</th>
                         <th >Actions</th>
 
                         </thead>
@@ -39,6 +40,7 @@ include'connection.php';
                             <tr>
                                 <td><?php echo $row['id'] ?></td>
                                 <td><?php echo $row['session'] ?></td>
+                                <td><?php echo $row['status'] ?></td>
                                 <td>
                                     <a class="btn btn-info" href="session/edit_session.php?id=<?php echo $row['id'] ?>">Edit</a>
                                     <a class="btn btn-danger" data-toggle="modal" data-target="#myModal<?php echo $row['id'] ?>" ">Delete</a>
