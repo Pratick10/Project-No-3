@@ -1,5 +1,7 @@
-<?php include'header.php';
-include'connection.php';
+<?php
+session_start();
+include 'header.php';
+include 'connection.php';
 ?>
     <div id="layoutSidenav_content">
         <main>
@@ -46,22 +48,9 @@ include'connection.php';
                         </div>
                     </div>
                 </div>
-
-
             </div>
         </main>
-        <footer class="py-4 bg-light mt-auto">
-            <div class="container-fluid">
-                <div class="d-flex align-items-center justify-content-between small">
-                    <div class="text-muted">Copyright &copy; Your Website 2020</div>
-                    <div>
-                        <a href="#">Privacy Policy</a>
-                        &middot;
-                        <a href="#">Terms &amp; Conditions</a>
-                    </div>
-                </div>
-            </div>
-        </footer>
+        <?php include 'footer.php'?>
     </div>
 </div>
 <script src="https://code.jquery.com/jquery-3.5.1.min.js" crossorigin="anonymous"></script>

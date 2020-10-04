@@ -43,7 +43,8 @@
             <!-- Navbar-->
             <ul class="navbar-nav ml-auto ml-md-0">
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" id="userDropdown" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
+                    <a class="nav-link dropdown-toggle" id="userDropdown" href="#" role="button" data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
                         <a class="dropdown-item" href="#">Settings</a>
                         <a class="dropdown-item" href="#">Activity Log</a>
@@ -119,10 +120,10 @@
                     <div class="sb-sidenav-footer">
                         <div class="small">Logged in as:
                             <?php
-                            $str= "select name,role from admin ";
+                            $str= "select * from student ";
                             $result= mysqli_query($conn, $str);
                             $row=mysqli_fetch_array($result);
-                            echo $row['role'];
+                            echo $row['name'] ;
                             ?>
                         </div>
                 </nav>

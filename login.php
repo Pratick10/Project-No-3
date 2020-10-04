@@ -48,7 +48,7 @@ if (isset($_POST['submit']))
     $email= $_POST['email'];
     $password= ($_POST['password']);
 
-    $str="select * from admin where email='$email' and password='$password'";
+    $str="select * from student where email='$email' and password=md5('$password')";
 
     $q=mysqli_query($conn, $str);
     $result= mysqli_fetch_array($q);

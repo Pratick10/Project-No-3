@@ -1,3 +1,17 @@
+<?php
+
+session_start();
+
+if (!isset($_SESSION['username']))
+{
+    header('location: login.php');
+}
+if (isset($_SESSION['userrole']) && $_SESSION['userrole'] == 'student')
+{
+    header('location: unauthorized.php');
+}
+
+?>
 <?php ob_start(); ?>
 <?php include'header.php';
 include'connection.php';
@@ -24,7 +38,6 @@ include'connection.php';
                        
             </div>
         </main>
-
         <?php
             if (isset($_POST['submit'])) {
                 $sectionname=$_POST['sectionname'];

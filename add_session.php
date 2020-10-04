@@ -1,3 +1,18 @@
+<?php
+
+session_start();
+
+if (!isset($_SESSION['username']))
+{
+    header('location: login.php');
+}
+if (isset($_SESSION['userrole']) && $_SESSION['userrole'] == 'student')
+{
+    header('location: unauthorized.php');
+}
+
+?>
+
 <?php include'header.php';
 include'connection.php';
 ?>
@@ -14,7 +29,7 @@ include'connection.php';
                         <legend class="custom-border"> Add Session</legend>
                             <div>
 <!--                                <input type="checkbox" > Active</input>-->
-                                <input type="checkbox" name="chkcc9" id="group1" />Check Me
+                                <input type="checkbox" name="status" id="group1" />Check Me
 
                             </div>
                             <div class="form-group">
@@ -33,16 +48,6 @@ include'connection.php';
         <?php include'footer.php'?>
     </div>
 </div>
-<script>
-    $(function() {
-        enable_cb();
-        $("#group1").click(enable_cb);
-    });
-
-    function enable_cb() {
-        $("input.group1").prop("disabled", !this.checked);
-    }
-</script>
 <script src="https://code.jquery.com/jquery-3.5.1.min.js" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
 <script src="js/scripts.js"></script>
@@ -52,11 +57,19 @@ include'connection.php';
 include 'connection.php';
 if (isset($_POST['submit']))
 {
+    if($_POST['status'] == "on")
+    {
+        $status= true;
+    }
+    else
+    {
+        $status= false;
+    }
     //receive data from input controls
     $session=$_POST['session'] ;
 
     //database query
-    $str= "INSERT INTO session(session) VALUES ('$session')";
+    $str= "INSERT INTO session(session,status) VALUES ('$session',$status)";
     if (mysqli_query($conn, $str))
     {
         header('Location: list_session.php');
