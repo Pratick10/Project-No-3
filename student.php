@@ -1,53 +1,76 @@
-<?php include'header.php';
-include'connection.php';
-?>
-    <div id="layoutSidenav_content">
-        <main>
-            <div class="container-fluid">
-                <h1 class="mt-4">Dashboard</h1>
-                <ol class="breadcrumb mb-4">
-                    <li class="breadcrumb-item"><a href="admin_dashboard.php">Dashboard</a></li>
-                    <li class="breadcrumb-item active">Add Student</li>
-                </ol>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1st Class</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+</head>
+<?php include 'connection.php'; ?>
+<body>
+    <div class="container">
+        <div>
+            <h2>Add Student</h2>
+        </div>
+
+        <div class="row">
+            <div class="col-md-8">
                 <form method="post" action="">
+                    
 
                     <div class="form-group">
-                        <label> Student ID </label>
-                        <input type="text" class="form-control" name="roll" id="">
+                        <label for="">Student ID</label>
+                        <input type="text" class="form-control" placeholder="Student ID" name="id" id="id">
+                    </div>
+                    <div class="form-group">
+                        <label for="">Name</label>
+                        <input type="text" class="form-control" placeholder="Name" name="name" id="name">
+                    </div>
+                    <div class="form-group">
+                        <label for="">Password</label>
+                        <input type="Password" class="form-control" placeholder="Password" name="password" id="password">
+                    </div>
+                    <div class="form-group">
+                        <label for="">Email</label>
+                        <input type="text" class="form-control" placeholder="Email" name="email" id="email">
+                    </div>
+                    <div class="form-group">
+                        <label for="">Roll</label>
+                        <input type="text" class="form-control" placeholder="Roll" name="roll" id="roll">
+                    </div>
+
+
+               
+                        </select>
                     </div>
 
                     <div class="form-group">
-                        <label> Password </label>
-                        <input type="text" class="form-control" name="password" id="">
+                        <input class="btn btn-primary" type="submit" name="submit" value="Add Student">
+
+                        <a class="btn btn-danger" href="studentlist.php">List All Students</a>
                     </div>
-
-                    <div class="form-group">
-                        <input type="submit" name="submit" value="Add" class="btn btn-primary">
-
-                    </div>
-
                 </form>
             </div>
-        </main>
-        <?php include'footer.php'?>
+        </div>
     </div>
-    </div>
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-    <script src="js/scripts.js"></script>
-    </body>
-    </html>
+</body>
+</html>
 
 <?php
    if(isset($_POST['submit'])) {
 
-    $id = $_POST['roll'];
+   
+
+    $id = $_POST['id'];
+    $name = $_POST['name'];
+    $email = $_POST['email'];
     $password = $_POST['password'];
-    $str = "INSERT INTO student (roll, password)
-       VALUES ('".$id."', '".$password."')";
+    $roll = $_POST['roll'];
+    $str = "INSERT INTO student (id,name,email,password,roll)
+     VALUES ('".$id."', '".$name."', '".$email."', '".$password."','".$roll."' )";
     if(mysqli_query($conn, $str)) {
-        header('Location: studentlist.php');
-     echo 'Successfully Inserted';
+        header('Location: student.php');
+   
  
     }
    }

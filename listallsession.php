@@ -17,26 +17,22 @@ include 'connection.php';
 </head>
 <body>
    <div class="container">
-  <table id="studentbl" class="table table-striped">
+  <table id="sessiontbl" class="table table-striped">
  
     <thead> 
          <th>ID</th>
-         <th>Student Name</th>
-         <th>Email</th>
-         <th>Password</th>
-         <th>Roll</th>
+         <th>Session</th>
+         <th>Status</th>
     </thead>
     <tbody>
      <?php  
-$str = "SELECT * FROM student"; 
+$str = "SELECT * FROM session"; 
 $q = mysqli_query($conn,$str);
     while ($row = mysqli_fetch_array($q)) { ?>
    <tr>
         <td><?php echo $row ['id']; ?></td>
-        <td><?php echo $row ['name']; ?></td>
-     <td><?php echo $row ['email']; ?></td>
-        <td><?php echo $row ['password']; ?></td>
-           <td><?php echo $row ['roll']; ?></td>
+        <td><?php echo $row ['session']; ?></td>
+     <td><?php echo $row ['status']; ?></td>
       </tr>
    <?php } 
 
@@ -47,7 +43,7 @@ $q = mysqli_query($conn,$str);
  </div>
 <script>
   $(document).ready( function () {
-    $('#studentbl').DataTable();
+    $('#sessiontbl').DataTable();
 } );
 </script>
 </body>
