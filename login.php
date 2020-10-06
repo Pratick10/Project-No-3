@@ -49,9 +49,11 @@ if (isset($_POST['submit']))
     $password= ($_POST['password']);
 
     $str="select * from student where email='$email' and password=md5('$password')";
-
+    $str2="select * from admin where email='$email' and password='$password'";
     $q=mysqli_query($conn, $str);
+    $q2=mysqli_query($conn, $str2);
     $result= mysqli_fetch_array($q);
+    $result2= mysqli_fetch_array($q2);
     if($result)
     {
         $username= $result['name'];
@@ -60,9 +62,19 @@ if (isset($_POST['submit']))
         $_SESSION['username']= $username; //set value in session variable
         $_SESSION['userrole']= $userrole;
 
-        header('location: admin_dashboard.php');
-
+        header('location: user_dashboard.php');
     }
+    if($result2)
+    {
+        $username= $result2['name'];
+        $userrole= $result2['role'];
+
+        $_SESSION['username']= $username; //set value in session variable
+        $_SESSION['userrole']= $userrole;
+
+        header('location: admin_dashboard.php');
+    }
+
     else echo 'mismatch';
 
 }

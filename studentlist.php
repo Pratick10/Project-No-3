@@ -13,10 +13,12 @@ include 'connection.php';
                 <div class="col-md-12">
 
                     <table class="table table-dark">
-                        <thead align="center">
-                        <th>Roll</th>
+                        <thead>
+                        <th>Student Name</th>
+                        <th>Email</th>
                         <th>Password</th>
-                        <th>Actions</th>
+                        <th>Roll</th>
+                        <th>Role</th>
                         </thead>
                         <tbody>
                         <?php
@@ -26,8 +28,11 @@ include 'connection.php';
 
 
                             <tr align="center">
-                                <td><?php echo $row['roll']?></td>
-                                <td><?php echo $row['password']?></td>
+                                <td><?php echo $row ['name']; ?></td>
+                                <td><?php echo $row ['email']; ?></td>
+                                <td><?php echo $row ['password']; ?></td>
+                                <td><?php echo $row ['roll']; ?></td>
+                                <td><?php echo $row ['role']; ?></td>
                                 <td>
                                     <a class="btn btn-primary" href="editSection.php?id=<?php echo $row['id']?>">Edit</a>
                                     <a class="btn btn-danger" data-toggle="modal" data-target="#myModal<?php echo $row['id']?>">Delete</a>

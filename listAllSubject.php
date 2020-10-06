@@ -13,23 +13,28 @@
                     <div class="col-md-12">
                 
                          <table class="table table-dark ">
-                            <thead>
-                               <th>SI No</th>
-                               <th>Subject Code</th>
-                               <th>Subject Name</th>
-<!--                               <th>Section Name</th>-->
-                               <th>Actions</th>
-                            </thead>
-                            <tbody>
-                             <?php 
-                    $str="SELECT * FROM subject";
-                    $results = mysqli_query($conn,$str);
-                    while($row = mysqli_fetch_array($results)){?>
+                             <thead>
+                             <th>SI No</th>
+                             <th>Subject Code</th>
+                             <th>Subject Name</th>
+                             <th>Subject Short_Name</th>
+                             <th>Subject Type</th>
 
-                        <tr>
-                            <td><?php echo $row['id']?></td>
-                            <td><?php echo $row['sub_code']?></td>
-                            <td><?php echo $row['sub_name']?></td>
+                             <!--                               <th>Section Name</th>-->
+                             <th>Actions</th>
+                             </thead>
+                             <tbody>
+                             <?php
+                             $str="SELECT * FROM subject";
+                             $results = mysqli_query($conn,$str);
+                             while($row = mysqli_fetch_array($results)){?>
+
+                                 <tr>
+                                     <td><?php echo $row['id']?></td>
+                                     <td><?php echo $row['sub_code']?></td>
+                                     <td><?php echo $row['sub_name']?></td>
+                                     <td><?php echo $row['sub_shortname']?></td>
+                                     <td><?php echo $row['sub_type']?></td>
 
                             <td>
                                 <a class="btn btn-primary" href="editSubject.php?id=<?php echo $row['id']?>">Edit</a>

@@ -9,13 +9,29 @@
     
 
     <form class ="container" method="post" enctype="multipart/form-data">
-        <div class=" ">
+        <div class=" form-group">
             <label> subjcet name  </label>
                 <input type="text" class="form-control " id="subject_name" name="sub_name">
         </div>
-        <div class=" ">
+
+        <div class=" form-group">
             <label> subjcet code</label>
                 <input type="text" class="form-control " id="code" name="sub_code">
+        </div>
+
+        <div class="form-group ">
+            <label> subjcet short_name</label>
+            <input type="text" class="form-control " id="short_name" name="sub_shortname">
+        </div>
+        <div class="form-group">
+            <label for="sub_type">subject_type:</label>
+            <br>
+            <select id="sub_type" name="sub_type">
+                <option value="">Select type</option>
+                <option value="theory">Theory</option>
+                <option value="lab">Lab</option>
+
+            </select>
         </div>
 
         <div class="col-md-4">

@@ -1,3 +1,17 @@
+<?php
+
+session_start();
+
+if (!isset($_SESSION['username']))
+{
+    header('location: admin_dashboard.php');
+}
+if (isset($_SESSION['userrole']) && $_SESSION['userrole'] == 'student')
+{
+    header('location: user_dashboard.php');
+}
+
+?>
 <?php include "connection.php"; ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -120,7 +134,7 @@
                     <div class="sb-sidenav-footer">
                         <div class="small">Logged in as:
                             <?php
-                            $str= "select * from student ";
+                            $str= "select * from admin";
                             $result= mysqli_query($conn, $str);
                             $row=mysqli_fetch_array($result);
                             echo $row['name'] ;

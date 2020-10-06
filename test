@@ -22,5 +22,55 @@ CREATE TABLE student(
         role varchar(255)
 );
 
+CREATE TABLE requestedCours(
+    id int NOT NULL PRIMARY KEY AUTO_INCREMENT,
+        session_id varchar(255),
+        student_id varchar(255),
+        subject_id varchar(255)
+);
+
 INSERT INTO student(name,email,password,role)
 VALUES ('Pratick','pratick.ps@gmail.com','12345','admin' );
+
+<?php
+include("connection.php");
+if(isset($_POST['login']))
+{
+	$id=$_POST['id'];
+	$password=$_POST['password'];
+	$sql="select Admin_id,passcode from admin where Admin_id='$id' and passcode='$password'";
+    $sql1="select Pat_id,passcode from  patient where Pat_id='$id' and passcode='$password'";
+    $sql2="select Doc_id,passcode from  doctor where Doc_id='$id' and passcode='$password'";
+	 $r=mysqli_query($con,$sql);
+            $r1=mysqli_query($con,$sql1);
+ $r2=mysqli_query($con,$sql2);
+	 if(mysqli_num_rows($r)>0)
+            {
+                $_SESSION['Pat_id']=$id;
+                $_SESSION['admin_login_status']="loged in";
+                header("Location:admin/home.php");
+            }
+
+            else if(mysqli_num_rows($r1)>0)
+            {
+                $_SESSION['Pat_id']=$id;
+                $_SESSION['patient_login_status']="loged in";
+                header("Location:patient/home.php");
+            }
+
+
+
+		 else if(mysqli_num_rows($r2)>0)
+            {
+                $_SESSION['Doc_id']=$id;
+                $_SESSION['doctor_login_status']="loged in";
+                header("Location:doctor/home.php");
+            }
+
+		  else
+            {
+                echo "<p style='color: red;'>Incorrect UserId or Password</p>";
+            }
+
+}
+?>

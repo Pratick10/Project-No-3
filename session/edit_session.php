@@ -24,9 +24,12 @@ $session=mysqli_fetch_array($result);
         <form method="post" action="">
 
             <div class="form-group">
+
                 <label> Sessions</label>
-                <input type="text" value="<?php echo $session['session'] ?>" class="form-control" name="session" id="">
+                <input type="checkbox" value="<?php echo $session['status'] ?> " checked="checked" name="status" id="">
+                <input type="text" value="<?php echo $session['session'] ?> " class="form-control" name="session" id="">
             </div>
+
 
             <div class="form-group">
                 <input type="submit" name="submit" value="Update Data" class="btn btn-primary">

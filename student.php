@@ -12,20 +12,28 @@ include'connection.php';
                 <form method="post" action="">
 
                     <div class="form-group">
-                        <label> Student ID </label>
-                        <input type="text" class="form-control" name="roll" id="">
+                        <label for="">Name</label>
+                        <input type="text" class="form-control" placeholder="Name" name="name" id="name">
                     </div>
-
                     <div class="form-group">
-                        <label> Password </label>
-                        <input type="text" class="form-control" name="password" id="">
+                        <label for="">Password</label>
+                        <input type="Password" class="form-control" placeholder="Password" name="password" id="password">
                     </div>
-
                     <div class="form-group">
-                        <input type="submit" name="submit" value="Add" class="btn btn-primary">
-
+                        <label for="">Email</label>
+                        <input type="text" class="form-control" placeholder="Email" name="email" id="email">
                     </div>
-
+                    <div class="form-group">
+                        <label for="">Roll</label>
+                        <input type="text" class="form-control" placeholder="roll" name="roll" id="roll">
+                    </div>
+                    <div class="form-group">
+                        <label for="">Role</label>
+                        <input type="text" class="form-control" placeholder="Role" name="role" id="roll">
+                    </div>
+                    <div class="form-group">
+                        <input class="btn btn-primary" type="submit" name="submit" value="Add Student">
+                    </div>
                 </form>
             </div>
         </main>
@@ -39,17 +47,16 @@ include'connection.php';
     </html>
 
 <?php
-   if(isset($_POST['submit'])) {
-
-    $id = $_POST['roll'];
+if(isset($_POST['submit'])) {
+    $role = $_POST['role'];
+    $name = $_POST['name'];
+    $email = $_POST['email'];
     $password = $_POST['password'];
-    $str = "INSERT INTO student (roll, password)
-       VALUES ('".$id."', '".$password."')";
+    $roll = $_POST['roll'];
+    $str = "INSERT INTO student (id,name,email,password,roll)
+     VALUES ('".$role."', '".$name."', '".$email."', '".$password."','".$roll."' )";
     if(mysqli_query($conn, $str)) {
         header('Location: studentlist.php');
-     echo 'Successfully Inserted';
- 
     }
-   }
-
+}
 ?>
