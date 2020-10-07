@@ -1,4 +1,4 @@
-<?php include'header.php';
+<?php include 'header.php';
       include 'connection.php';
 ?>
     <div id="layoutSidenav_content">
@@ -37,7 +37,7 @@
                                      <td><?php echo $row['sub_type']?></td>
 
                             <td>
-                                <a class="btn btn-primary" href="editSubject.php?id=<?php echo $row['id']?>">Edit</a>
+                                <a class="btn btn-primary" href="subject/edit_subject.php?id=<?php echo $row['id']?>">Edit</a>
                                 <a class="btn btn-danger" data-toggle="modal" data-target="#myModal<?php echo $row['id']?>">Delete</a>
     
                               <!-- The Modal -->

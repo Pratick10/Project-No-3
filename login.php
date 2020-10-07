@@ -43,39 +43,35 @@
 </html>
 <?php
 include 'connection.php';
-if (isset($_POST['submit']))
-{
+if (isset($_POST['submit'])) {
+
     $email= $_POST['email'];
-    $password= ($_POST['password']);
+    $password = md5($_POST['password']);
+    //echo $email;
 
-    $str="select * from student where email='$email' and password=md5('$password')";
-    $str2="select * from admin where email='$email' and password='$password'";
-    $q=mysqli_query($conn, $str);
-    $q2=mysqli_query($conn, $str2);
+    $str="SELECT * FROM student where email='$email' and password='$password'";
+    echo $str;
+    $q=mysqli_query($conn,$str);
     $result= mysqli_fetch_array($q);
-    $result2= mysqli_fetch_array($q2);
-    if($result)
-    {
-        $username= $result['name'];
-        $userrole= $result['role'];
+    if ($result) {
+        $id=$result['email'];
+        $userrole=$result['role'];
+        if($userrole=='admin'){
+            $_SESSION['email']=$id;
+            //$_SESSION['role']=$role;
+            //echo $_SESSION['userrole'];
+            header('Location:admin_dashboard.php');
+        }
+        if($userrole=='student'){
+            $_SESSION['email']=$id;
+            //$_SESSION['role']=$role;
+            header('Location: user_dashboard.php');
+        }
 
-        $_SESSION['username']= $username; //set value in session variable
-        $_SESSION['userrole']= $userrole;
 
-        header('location: user_dashboard.php');
+
+        ob_end_flush();
     }
-    if($result2)
-    {
-        $username= $result2['name'];
-        $userrole= $result2['role'];
-
-        $_SESSION['username']= $username; //set value in session variable
-        $_SESSION['userrole']= $userrole;
-
-        header('location: admin_dashboard.php');
-    }
-
-    else echo 'mismatch';
-
 }
+
 ?>

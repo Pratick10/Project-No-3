@@ -7,10 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>Dashboard - User</title>
+    <title>Dashboard - SB User</title>
     <link href="css/styles.css" rel="stylesheet" />
     <link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet" crossorigin="anonymous" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js" crossorigin="anonymous"></script>
+
 </head>
 <body class="sb-nav-fixed">
 <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
@@ -33,7 +34,7 @@
                 <a class="dropdown-item" href="#">Settings</a>
                 <a class="dropdown-item" href="#">Activity Log</a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="login.php">Logout</a>
+                <a class="dropdown-item" href="logout.php">Logout</a>
             </div>
         </li>
     </ul>
@@ -44,42 +45,27 @@
             <div class="sb-sidenav-menu">
                 <div class="nav">
                     <div class="sb-sidenav-menu-heading">Core</div>
-                    <a class="nav-link" href="user_dashboard.php">
-                        <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                        Dashboard
-                    </a>
+
                     <div class="sb-sidenav-menu-heading">Interface</div>
-                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
+                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseSession" aria-expanded="false"
+                       aria-controls="collapseSession">
                         <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
-                        Enrollment
+                        Manage Course
                         <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                     </a>
-                    <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
-                        <nav class="sb-sidenav-menu-nested nav">
-                            <?php
-                            $str= "select * from student";
-                            $result= mysqli_query($conn, $str);
-                            while($row=mysqli_fetch_array($result)) {
-                                ?>
-                                <a class="nav-link" href="requestCourse.php?id=<?php echo $row['id'] ?>">Enroll</a>
-                                <a class=" nav-link" href="layout-sidenav-light.html">View List</a>
-                                <?php
-                            }
-                            ?>
-                        </nav>
+                    <div class="collapse" id="collapseSession" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
+                        <div class="collapse" id="collapseSession" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
+                            <nav class="sb-sidenav-menu-nested nav">
+                                <a class="nav-link" href="requestCourse.php">Add Session</a>
+                                <a class="nav-link" href="viewCourse.php">List all Session</a>
+                            </nav>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="sb-sidenav-footer">
-                <div class="small">Logged in as:
-                    <?php
-                    $str= "select * from student";
-                    $result= mysqli_query($conn, $str);
-                    $row=mysqli_fetch_array($result);
-                    echo $row['id'] ;
-                    ?>
-                </div>
-
+                <div class="small">Logged in as:</div>
+                Student
             </div>
         </nav>
     </div>

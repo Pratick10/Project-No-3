@@ -53,8 +53,9 @@ if(isset($_POST['submit'])) {
     $email = $_POST['email'];
     $password = $_POST['password'];
     $roll = $_POST['roll'];
-    $str = "INSERT INTO student (id,name,email,password,roll)
-     VALUES ('".$role."', '".$name."', '".$email."', '".$password."','".$roll."' )";
+    $role = $_POST['role'];
+    $str = "INSERT INTO student (id,name,email,password,roll,role)
+     VALUES ('".$role."', '".$name."', '".$email."', md5('".$password."'),'".$roll."', '".$role."' )";
     if(mysqli_query($conn, $str)) {
         header('Location: studentlist.php');
     }

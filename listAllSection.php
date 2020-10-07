@@ -29,7 +29,7 @@
                             <td><?php echo $row['id']?></td>
                             <td><?php echo $row['section']?></td>
                             <td>
-                                <a class="btn btn-primary" href="editSection.php?id=<?php echo $row['id']?>">Edit</a>
+                                <a class="btn btn-primary" href="section/edit_section.php?id=<?php echo $row['id']?>">Edit</a>
                                 <a class="btn btn-danger" data-toggle="modal" data-target="#myModal<?php echo $row['id']?>">Delete</a>
     
                         <!-- The Modal -->
@@ -50,7 +50,7 @@
                               
                               <!-- Modal footer -->
                               <div class="modal-footer">
-                                <a href="delete-section.php?id=<?php echo $row['id']?>" class="btn btn-success">Yes</a>
+                                <a href="section/delete_section.php?id=<?php echo $row['id']?>" class="btn btn-success">Yes</a>
                                 <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
                               </div>
                               

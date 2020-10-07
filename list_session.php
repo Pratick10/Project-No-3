@@ -1,18 +1,4 @@
-<?php
-
-session_start();
-
-if (!isset($_SESSION['username']))
-{
-    header('location: login.php');
-}
-if (isset($_SESSION['userrole']) && $_SESSION['userrole'] == 'student')
-{
-    header('location: unauthorized.php');
-}
-
-?>
-<?php include'header.php';
+<?php include 'header.php';
 include'connection.php';
 ?>
     <div id="layoutSidenav_content">
@@ -22,7 +8,7 @@ include'connection.php';
                 <a class="btn btn-primary" href="add_session.php">Add Session</a>
 
                 <div>
-                    <table class="table">
+                    <table class="table table-striped" id="myTable">
                         <thead class="thead-dark" align="center">
                         <th>ID</th>
                         <th>Sessions</th>
@@ -76,20 +62,15 @@ include'connection.php';
                 </div>
             </div>
         </main>
-        <footer class="py-4 bg-light mt-auto">
-            <div class="container-fluid">
-                <div class="d-flex align-items-center justify-content-between small">
-                    <div class="text-muted">Copyright &copy; Your Website 2020</div>
-                    <div>
-                        <a href="#">Privacy Policy</a>
-                        &middot;
-                        <a href="#">Terms &amp; Conditions</a>
-                    </div>
-                </div>
-            </div>
-        </footer>
     </div>
-</div>
+        <?php include 'footer.php';
+        ?>
+        <script>
+            $(document).ready( function () {
+                $('#myTable').DataTable();
+            } );
+        </script>
+
 <script src="https://code.jquery.com/jquery-3.5.1.min.js" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
 <script src="js/scripts.js"></script>

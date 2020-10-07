@@ -1,48 +1,48 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Editpage</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-</head>
-<?php include 'connection.php'; ?>
-<?php
-$session_id= $_REQUEST['id'];
-$str="select * from session where id=$session_id";
-$result= mysqli_query($conn, $str);
-$session=mysqli_fetch_array($result);
+<?php ob_start(); ?>
+<?php include 'header.php'; ?>
+<div id="layoutSidenav_content">
+    <main>
+        <div class="container-fluid">
+            <h1 class="mt-4">Dashboard</h1>
+            <ol class="breadcrumb mb-4">
+                <li class="breadcrumb-item"><a href="../admin_dashboard.php">Dashboard</a></li>
+                <li class="breadcrumb-item active">Edit Session</li>
+            </ol>
 
-?>
-<body>
-<div class="container">
-    <h2> Edit Session</h2>
+            <?php
+            include '../connection.php';
+            $session_id= $_REQUEST['id'];
+            $str="select * from session where id=$session_id";
+            $result= mysqli_query($conn, $str);
+            $session=mysqli_fetch_array($result);
+            ?>
 
-    <div>
-        <form method="post" action="">
+            <form method="post" action="" class="col-6">
 
-            <div class="form-group">
+                <div class="form-group">
 
-                <label> Sessions</label>
-                <input type="checkbox" value="<?php echo $session['status'] ?> " checked="checked" name="status" id="">
-                <input type="text" value="<?php echo $session['session'] ?> " class="form-control" name="session" id="">
-            </div>
+                    <label> Sessions</label>
+                    <input type="checkbox" value="<?php echo $session['status'] ?> " checked="checked" name="status" id="">
+                    <input type="text" value="<?php echo $session['session'] ?> " class="form-control" name="session" id="">
+                </div>
 
 
-            <div class="form-group">
-                <input type="submit" name="submit" value="Update Data" class="btn btn-primary">
-                <a class="btn btn-danger" href="../list_session.php"> List all Session</a>
+                <div class="form-group">
+                    <input type="submit" name="submit" value="Update Data" class="btn btn-primary">
+                    <a class="btn btn-danger" href="../list_session.php"> List all Session</a>
 
-            </div>
+                </div>
 
-        </form>
-    </div>
-</div>
+            </form>
 
-</body>
-</html>
+        </div>
+    </main>
+    <?php include'../footer.php'?>
+
+
+
+
+
 
 <?php
 if (isset($_POST['submit']))

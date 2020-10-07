@@ -6,19 +6,20 @@ include 'connection.php';
         <div class="container-fluid">
             <h1 class="mt-4">Dashboard</h1>
             <ol class="breadcrumb mb-4">
-                <li class="breadcrumb-item"><a href="index.php">Dashboard</a></li>
+                <li class="breadcrumb-item"><a href="admin_dashboard.php">Dashboard</a></li>
                 <li class="breadcrumb-item active">Tables</li>
             </ol>
             <div class="row">
                 <div class="col-md-12">
 
-                    <table class="table table-dark">
-                        <thead>
+                    <table class="table table-dark" id="myTable" >
+                        <thead align="center">
                         <th>Student Name</th>
                         <th>Email</th>
                         <th>Password</th>
                         <th>Roll</th>
                         <th>Role</th>
+                        <th>Action</th>
                         </thead>
                         <tbody>
                         <?php
@@ -34,7 +35,7 @@ include 'connection.php';
                                 <td><?php echo $row ['roll']; ?></td>
                                 <td><?php echo $row ['role']; ?></td>
                                 <td>
-                                    <a class="btn btn-primary" href="editSection.php?id=<?php echo $row['id']?>">Edit</a>
+                                    <a class="btn btn-primary" href="student/edit_student.php?id=<?php echo $row['id']?>">Edit</a>
                                     <a class="btn btn-danger" data-toggle="modal" data-target="#myModal<?php echo $row['id']?>">Delete</a>
 
                                     <!-- The Modal -->
@@ -50,12 +51,12 @@ include 'connection.php';
 
                                                 <!-- Modal body -->
                                                 <div class="modal-body">
-                                                    <p style="color: black">Are you sure to delete <?php echo $row['section']?><p>
+                                                    <p style="color: black">Are you sure to delete <?php echo $row['name']?><p>
                                                 </div>
 
                                                 <!-- Modal footer -->
                                                 <div class="modal-footer">
-                                                    <a href="delete-section.php?id=<?php echo $row['id']?>" class="btn btn-success">Yes</a>
+                                                    <a href="student/delete_student.php?id=<?php echo $row['id']?>" class="btn btn-success">Yes</a>
                                                     <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
                                                 </div>
 
@@ -65,10 +66,9 @@ include 'connection.php';
 
                                 </td>
                             </tr>
-                        <?php } ?>
+                        <?php }
+                        ?>
                         </tbody>
-
-
                     </table>
                 </div>
 
@@ -76,4 +76,9 @@ include 'connection.php';
 
         </div>
     </main>
+    <script>
+        $(document).ready( function () {
+            $('#myTable').DataTable();
+        } );
+    </script>
 <?php include'footer.php'?>

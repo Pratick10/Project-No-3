@@ -1,4 +1,4 @@
-<?php include "connection.php"; ?>
+<?php include "../connection.php"; ?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -8,11 +8,9 @@
         <meta name="description" content="" />
         <meta name="author" content="" />
         <title>Dashboard - SB Admin</title>
-        <link href="css/styles.css" rel="stylesheet" />
+        <link href="../css/styles.css" rel="stylesheet" />
         <link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet" crossorigin="anonymous" />
         <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js" crossorigin="anonymous"></script>
-        <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css">
-        <script src="//cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
         <style>
             fieldset.custom-border {
                 border: 1px groove #ddd !important;
@@ -31,7 +29,7 @@
     </head>
     <body class="sb-nav-fixed">
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
-            <a class="navbar-brand" href="admin_dashboard.php">Start Bootstrap</a>
+            <a class="navbar-brand" href="../admin_dashboard.php">Start Bootstrap</a>
             <button class="btn btn-link btn-sm order-1 order-lg-0" id="sidebarToggle" href="#"><i class="fas fa-bars"></i></button>
             <!-- Navbar Search-->
             <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
@@ -51,7 +49,7 @@
                         <a class="dropdown-item" href="#">Settings</a>
                         <a class="dropdown-item" href="#">Activity Log</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="logout.php">Logout</a>
+                        <a class="dropdown-item" href="../logout.php">Logout</a>
                     </div>
                 </li>
             </ul>
@@ -62,7 +60,7 @@
                     <div class="sb-sidenav-menu">
                         <div class="nav">
                             <div class="sb-sidenav-menu-heading">Core</div>
-                            <a class="nav-link" href="admin_dashboard.php">
+                            <a class="nav-link" href="../admin_dashboard.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Dashboard
                             </a>
@@ -74,8 +72,8 @@
                             </a>
                             <div class="collapse" id="collapseSession" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
-                                    <a class="nav-link" href="add_session.php">Add Session</a>
-                                    <a class="nav-link" href="list_session.php">List all Session</a>
+                                    <a class="nav-link" href="../add_session.php">Add Session</a>
+                                    <a class="nav-link" href="../list_session.php">List all Session</a>
                                 </nav>
                             </div>
 
@@ -86,8 +84,8 @@
                             </a>
                             <div class="collapse" id="collapseSection" aria-labelledby="headingTwo" data-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
-                                    <a class="nav-link" href="addSection.php">Add Section</a>
-                                    <a class="nav-link" href="listAllSection.php">List all Section</a>
+                                    <a class="nav-link" href="../addSection.php">Add Section</a>
+                                    <a class="nav-link" href="../listAllSection.php">List all Section</a>
                                 </nav>
                             </div>
 
@@ -99,8 +97,8 @@
                             </a>
                             <div class="collapse" id="collapseSubject" aria-labelledby="headingThree" data-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
-                                    <a class="nav-link" href="addSubject.php">Add Subjects</a>
-                                    <a class="nav-link" href="listAllSubject.php">List all Subject</a>
+                                    <a class="nav-link" href="../addSubject.php">Add Subjects</a>
+                                    <a class="nav-link" href="../listAllSubject.php">List all Subject</a>
                                 </nav>
                             </div>
 
@@ -112,8 +110,8 @@
                             </a>
                             <div class="collapse" id="collapseStudent" aria-labelledby="headingFour" data-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
-                                    <a class="nav-link" href="student.php">Add Student</a>
-                                    <a class="nav-link" href="studentlist.php">List all Student</a>
+                                    <a class="nav-link" href="../student.php">Add Student</a>
+                                    <a class="nav-link" href="../studentlist.php">List all Student</a>
                                 </nav>
                             </div>
 

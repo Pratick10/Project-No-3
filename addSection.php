@@ -10,7 +10,7 @@ include'connection.php';
                     <li class="breadcrumb-item"><a href="admin_dashboard.php">Dashboard</a></li>
                     <li class="breadcrumb-item active">Add Section</li>
                 </ol>
-                <form action="" method="post">
+                <form action="" method="post" class="col-6">
                     <div class="form-group">
                         <label for="">Section Name:</label>
                         <input type="text" class="form-control" name="sectionname" id="">
