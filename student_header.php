@@ -1,4 +1,6 @@
-<?php include "connection.php"; ?>
+<?php
+//session_start();
+include "connection.php"; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -50,14 +52,14 @@
                     <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseSession" aria-expanded="false"
                        aria-controls="collapseSession">
                         <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
-                        Manage Course
+                        Enrollment
                         <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                     </a>
                     <div class="collapse" id="collapseSession" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
                         <div class="collapse" id="collapseSession" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
                             <nav class="sb-sidenav-menu-nested nav">
-                                <a class="nav-link" href="requestCourse.php">Add Session</a>
-                                <a class="nav-link" href="viewCourse.php">List all Session</a>
+                                <a class="nav-link" href="requestCourse.php">Request for Enroll</a>
+                                <a class="nav-link" href="viewCourse.php">View</a>
                             </nav>
                         </div>
                     </div>
@@ -65,7 +67,19 @@
             </div>
             <div class="sb-sidenav-footer">
                 <div class="small">Logged in as:</div>
-                Student
+                <?php
+                session_start();
+                $id=$_SESSION['id'];
+                echo $id;
+                echo '<br>';
+
+                $str= "select * from student WHERE id='$id'";
+                $result= mysqli_query($conn, $str);
+                $row=mysqli_fetch_array($result);
+                echo $row['name'] ;
+                echo '<br>';
+                echo $row['role'] ;
+                ?>
             </div>
         </nav>
     </div>

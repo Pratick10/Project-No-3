@@ -122,9 +122,15 @@
                     <div class="sb-sidenav-footer">
                         <div class="small">Logged in as:
                             <?php
-                            $str= "select * from student";
+                            session_start();
+                            $id=$_SESSION['id'];
+                            echo $id;
+                            echo '<br>';
+                            $str= "select * from student WHERE id='$id'";
                             $result= mysqli_query($conn, $str);
                             $row=mysqli_fetch_array($result);
+                            echo $row['name'] ;
+                            echo '<br>';
                             echo $row['role'] ;
                             ?>
                         </div>

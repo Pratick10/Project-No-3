@@ -1,9 +1,9 @@
 <?php
 include 'connection.php';
 include'student_header.php';
-       session_start();
+//       session_start();
        $id=$_SESSION['id'];
-       //echo $id;
+       echo $id;
 ?>
     <div id="layoutSidenav_content">
         <main>
@@ -14,7 +14,7 @@ include'student_header.php';
                     <li class="breadcrumb-item active">Request For Enroll</li>
                 </ol>
                 <div>
-                    <div >
+                    <div class="col-8">
                         <select class="from-control" id="test" name="">
                             <option value=""> Select Option</option>
                             <?php
@@ -29,20 +29,21 @@ include'student_header.php';
                             ?>
                     </select>
                     </div>
-                    <div class="col-6" id="changetable">
+                    <div class="col" id="changetable">
 
                     <div >
                         <table class="table">
                           <tr>
                             <th>Name</th>
                             <th>Section</th>
+                              <th>Type</th>
                             <th>Action</th>
                            
                         </tr>
 
                     <?php 
                     
-                    $str="SELECT * FROM subject,section";
+                    $str="SELECT subject.*, section.* FROM subject,section";
                     $results = mysqli_query($conn,$str);
                     while($row = mysqli_fetch_array($results)){
                         $section_id=$row['id'];
@@ -54,6 +55,13 @@ include'student_header.php';
                           <tr>
                         <td><label><?php echo $row['sub_name']?></label></td>
                         <td><label><?php echo $row1['section']?></label></td>
+                              <td><select class="form-control " id="type" name="sub_type">
+                                      <option value="">Select type</option>
+                                      <option value="retake">Retake</option>
+                                      <option value="regular">Regular</option>
+                                      <option value="recourse">Recourse</option>
+                                  </select>
+                              </td>
                      <td><input type="checkbox" class="get_value" value="<?php echo $row['id']?>" /></td></tr>
                      <?php } ?></table>                      
                 </div>       
@@ -70,21 +78,28 @@ include'student_header.php';
             $("#changetable").hide();
            $('#test').change(function(){
             var test_id=$("#test").val();
-//            alert(test_id);
-             $("#changetable").show();  
+            alert(test_id);
+             $("#changetable").show();
+
              $("#submit").click(function(){
                 var languages=[];
+                var type=$("#type").val();
+                alert(type);
+//                  var types=[];
                 $('.get_value').each(function(){
+
                     if($(this).is(":checked"))
                     {
                         languages.push($(this).val());
                     }
+
                 });
                 languages=languages.toString();
+
                 $.ajax({  
                 url:"insert.php",  
                 method:"POST",  
-                data:{languages:languages,test_id:test_id},  
+                data:{languages:languages,test_id:test_id, type:type},
                 success:function(data){  
                      $('#result').html(data);  
                 }  

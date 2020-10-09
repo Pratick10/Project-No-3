@@ -1,9 +1,10 @@
  <?php  
  //insert.php 
- include 'connection.php'; 
+// include 'connection.php';
   session_start();
   include 'connection.php';
   $id=$_SESSION['id'];
+  echo $id;
 
  
  if(isset($_POST["languages"]))
@@ -12,14 +13,15 @@
  	  echo $test_id;
  	  $parts = explode(',', $_POST["languages"]);
  	  $result = sizeof($parts);
+     $sub_type = $_POST['type'];
  	  //echo $result;
  	  for ($i=0; $i < $result ; $i++) { 
- 	  	$query = "INSERT INTO requestedCours(session_id,student_id,subject_id) VALUES ('".$test_id."','".$id."','".$parts[$i]."')";
+ 	  	$query = "INSERT INTO requestedCours(session_id,student_id,subject_id,type) VALUES ('".$test_id."','".$id."','".$parts[$i]."','".$sub_type."')";
       	$results = mysqli_query($conn,$query);
 
  	  }
             echo 'Check Box Data Inserted';
-            //echo $id;  
+//            echo $id;
 
  }
                     ob_end_flush();

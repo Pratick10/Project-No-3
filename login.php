@@ -45,33 +45,30 @@
 include 'connection.php';
 if (isset($_POST['submit'])) {
 
-    $email= $_POST['email'];
+    $email = $_POST['email'];
     $password = md5($_POST['password']);
     //echo $email;
 
-    $str="SELECT * FROM student where email='$email' and password='$password'";
+    $str = "SELECT * FROM student where email='$email' and password='$password'";
     echo $str;
-    $q=mysqli_query($conn,$str);
-    $result= mysqli_fetch_array($q);
+    $q = mysqli_query($conn, $str);
+    $result = mysqli_fetch_array($q);
     if ($result) {
-        $id=$result['email'];
-        $userrole=$result['role'];
-        if($userrole=='admin'){
-            $_SESSION['email']=$id;
+        $id = $result['id'];
+        $userrole = $result['role'];
+        if ($userrole == 'admin' && $password == md5('12345')) {
+            $_SESSION['id'] = $id;
             //$_SESSION['role']=$role;
             //echo $_SESSION['userrole'];
             header('Location:admin_dashboard.php');
-        }
-        if($userrole=='student'){
-            $_SESSION['email']=$id;
+        } //if($userrole=='student')
+        else {
+            $_SESSION['id'] = $id;
+//            echo $_SESSION['id'];
             //$_SESSION['role']=$role;
             header('Location: user_dashboard.php');
         }
-
-
-
         ob_end_flush();
     }
 }
-
 ?>
