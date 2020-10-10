@@ -2,12 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a629d2b2-6837-4083-861e-fff3e3945564" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/Project3.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Project3.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/header.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/insert.php" beforeDir="false" afterPath="$PROJECT_DIR$/insert.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/login.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/requestCourse.php" beforeDir="false" afterPath="$PROJECT_DIR$/requestCourse.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/student_header.php" beforeDir="false" afterPath="$PROJECT_DIR$/student_header.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test" beforeDir="false" afterPath="$PROJECT_DIR$/test" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,6 +44,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="DatabaseDriversLRU" value="oracle" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -93,7 +94,9 @@
       <workItem from="1602067618908" duration="14192000" />
       <workItem from="1602243502224" duration="98000" />
       <workItem from="1602243733488" duration="9140000" />
-      <workItem from="1602255873293" duration="1308000" />
+      <workItem from="1602255873293" duration="3592000" />
+      <workItem from="1602301231835" duration="53000" />
+      <workItem from="1602301383738" duration="10098000" />
     </task>
     <servers />
   </component>
