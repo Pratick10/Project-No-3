@@ -35,7 +35,7 @@ include'student_header.php';
                         <table class="table">
                           <tr>
                             <th>Name</th>
-                            <th>Section</th>
+<!--                            <th>Section</th>-->
                               <th>Type</th>
                             <th>Action</th>
                            
@@ -53,7 +53,7 @@ include'student_header.php';
                         ?>
                           <tr>
                         <td><label><?php echo $row['sub_name']?></label></td>
-                        <td><label><?php echo $row1['section']?></label></td>
+<!--                        <td><label>--><?php //echo $row1['section']?><!--</label></td>-->
 <!--                              <td><select class="form-control ">-->
 <!--                                      <option name="type" id="type" value="">Select type</option>-->
 <!--                                      <option name="type" id="type" value="retake">Retake</option>-->
@@ -79,7 +79,7 @@ include'student_header.php';
                      <td><input type="checkbox" class="get_value" value="<?php echo $row['id']?>" /></td></tr>
                      <?php } ?></table>                      
                 </div>       
-                <button type="button" name="submit" class="btn btn-info" id="submit">Submit</button>  
+                <button type="button" name="submit" class="btn btn-info" id="submit">Enroll</button>
                                 <div id="result"></div>
                   </div>
               </div>

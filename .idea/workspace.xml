@@ -5,9 +5,13 @@
       <change beforePath="$PROJECT_DIR$/.idea/Project3.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Project3.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin_dashboard.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin_dashboard.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/header.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/insert.php" beforeDir="false" afterPath="$PROJECT_DIR$/insert.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/requestCourse.php" beforeDir="false" afterPath="$PROJECT_DIR$/requestCourse.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test" beforeDir="false" afterPath="$PROJECT_DIR$/test" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/student_header.php" beforeDir="false" afterPath="$PROJECT_DIR$/student_header.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user_dashboard.php" beforeDir="false" afterPath="$PROJECT_DIR$/user_dashboard.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/viewCourse.php" beforeDir="false" afterPath="$PROJECT_DIR$/viewCourse.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,8 +24,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="CSS File" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -48,7 +52,7 @@
     <property name="DatabaseDriversLRU" value="oracle" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../project 3-20201122T135318Z-001" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
   </component>
@@ -96,7 +100,15 @@
       <workItem from="1602243733488" duration="9140000" />
       <workItem from="1602255873293" duration="3592000" />
       <workItem from="1602301231835" duration="53000" />
-      <workItem from="1602301383738" duration="10098000" />
+      <workItem from="1602301383738" duration="10919000" />
+      <workItem from="1602487205684" duration="1495000" />
+      <workItem from="1602588757744" duration="814000" />
+      <workItem from="1602649683319" duration="15538000" />
+      <workItem from="1602693400160" duration="15000" />
+      <workItem from="1603883711411" duration="304000" />
+      <workItem from="1605787511114" duration="5956000" />
+      <workItem from="1605967068877" duration="2523000" />
+      <workItem from="1606053896399" duration="239000" />
     </task>
     <servers />
   </component>
@@ -112,6 +124,10 @@
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="310" y="0" key="CommitChangelistDialog2/0.0.1366.768@0.0.1366.768" timestamp="1602256157006" />
+    <state x="463" y="138" key="FileChooserDialogImpl" timestamp="1606053970129">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="463" y="138" key="FileChooserDialogImpl/0.0.1366.768@0.0.1366.768" timestamp="1606053970129" />
     <state width="196" height="457" key="HiddenNamespacesPopup" timestamp="1602255993325">
       <screen x="0" y="0" width="1366" height="768" />
     </state>

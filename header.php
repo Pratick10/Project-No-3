@@ -1,4 +1,9 @@
-<?php include "connection.php"; ?>
+<?php
+session_start();
+?>
+<?php
+include "connection.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -122,7 +127,7 @@
                     <div class="sb-sidenav-footer">
                         <div class="small">Logged in as:
                             <?php
-                            session_start();
+
                             $id=$_SESSION['id'];
                             echo $id;
                             echo '<br>';

@@ -4,7 +4,6 @@
     <content url="file://$MODULE_DIR$" />
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module" module-name="test" />
-    <orderEntry type="module" module-name="project 3-20201122T135318Z-001" />
+    <orderEntry type="module" module-name="Project3" />
   </component>
 </module>

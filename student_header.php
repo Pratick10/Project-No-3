@@ -1,4 +1,7 @@
 <?php
+session_start();
+?>
+<?php
 //session_start();
 include "connection.php"; ?>
 <!DOCTYPE html>
@@ -13,7 +16,8 @@ include "connection.php"; ?>
     <link href="css/styles.css" rel="stylesheet" />
     <link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet" crossorigin="anonymous" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js" crossorigin="anonymous"></script>
-
+    <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css">
+    <script src="//cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
 </head>
 <body class="sb-nav-fixed">
 <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
@@ -68,7 +72,7 @@ include "connection.php"; ?>
             <div class="sb-sidenav-footer">
                 <div class="small">Logged in as:</div>
                 <?php
-                session_start();
+//                session_start();
                 $id=$_SESSION['id'];
                 echo $id;
                 echo '<br>';
